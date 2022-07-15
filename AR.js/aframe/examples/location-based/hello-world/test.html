@@ -6,6 +6,7 @@
     <title>GeoAR.js demo</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <!-- 在这里我把这个js文件的路径更改成了本地的，因为官方示例的这个js文件没有梯子访问不到，文件具体的获取方式可以看下我前面的两篇文章（直接在github上面下载下来就行了） -->
     <script src="../../../build/aframe-ar-nft.js"></script>
   </head>
  
@@ -15,23 +16,12 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-    <!-- 模型实例 -->
-	<!-- <a-entity
-	  gltf-model="https://cdn.glitch.com/06bd98b4-97ee-4c07-a546-fe39ca205034%2Fbowser.glb"
-	  scale="2 2 2"
-	  gps-entity-place="latitude: 40.008388; longitude: 116.2820480"
-	  position="0 -10 0"
-	></a-entity> -->
-    <!-- 正方体实例 -->
-	<a-box 
-	material="color: yellow" 
-	gps-entity-place="latitude: 40.008388; longitude: 16.2820480"/>
-    <!-- 文字实例 --> 
-    <a-text
+        <!-- 下面的gps-entity-place指的就是经纬度，尽量精确一些，手机上面自带的指南针获取到的经纬度都不太精确，我用了一个第三方软件叫做“经纬度定位”，类似的软件有不少，大家可以自己找一下 -->
+      <a-text
         value="This content will always face you."
         look-at="[gps-camera]"
         scale="120 120 120"
-        gps-entity-place="latitude: 40.008388; longitude: 106.496313;"
+        gps-entity-place="latitude: 38.9414000; longitude: 117.2820480;"
       ></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
